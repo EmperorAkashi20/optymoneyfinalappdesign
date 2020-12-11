@@ -1,0 +1,2 @@
+TextSpan(text: "If you invest Rs ${sip1Amount.toString()} per month for ${investedFor.toString()} years @ ${expectedRateOfReturn.toString()} "
+                    "P.A expected rate of return, you will accumulate RS ${futureValueOfInvestment.toString()} at the end of ${investedFor.toString()} years"),
