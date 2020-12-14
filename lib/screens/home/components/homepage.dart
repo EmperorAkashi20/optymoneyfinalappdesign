@@ -2,17 +2,24 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:optymoney_final/constants.dart';
 import 'package:optymoney_final/screens/home/components/calculator_buttons.dart';
+import 'package:optymoney_final/screens/home/components/homepagetabs.dart';
 
 import 'icon_button_with_counter.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatefulWidget {
+  static String routeName = "/login_success";
   final Widget child;
+
   HomePage({Key key, this.child}) : super(key: key);
   _HomePageState createState() => _HomePageState();
 }
 
 // ignore: non_constant_identifier_names
-Color PrimaryColor = Color(0xff109618);
+Color PrimaryColor = Color(0xffff5722);
+// ignore: non_constant_identifier_names
+Color PrimaryTextColor = Colors.black;
+
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -21,6 +28,7 @@ class _HomePageState extends State<HomePage> {
       length: 4,
       child: Scaffold(
         appBar: new AppBar(
+          backgroundColor: PrimaryColor,
           title: Align(
             alignment: Alignment.topRight,
               child: IconBtnWithCounter(
@@ -33,6 +41,7 @@ class _HomePageState extends State<HomePage> {
           bottom: TabBar(
             isScrollable: true,
             indicatorColor: kPrimaryColor,
+            unselectedLabelColor: Colors.grey,
             indicatorWeight: 3.0,
             onTap: (index){
               setState(() {
@@ -61,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   child: Text(
                     'HOME',
-                    style: TextStyle(color: Colors.black, fontSize: 14.0),
+                    style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -69,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   child: Text(
                     'CALCULATORS',
-                    style: TextStyle(color: Colors.black, fontSize: 14.0),
+                    style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -77,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   child: Text(
                     'QUICK LINKS',
-                    style: TextStyle(color: Colors.black, fontSize: 14.0),
+                    style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -85,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   child: Text(
                     'EXPLORE',
-                    style: TextStyle(color: Colors.black, fontSize: 14.0),
+                    style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -93,14 +102,18 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         drawer: new Drawer(
+
           child: new ListView(
             children: <Widget>[
               new UserAccountsDrawerHeader(
-                accountName: new Text("Rishabh Sethia"),
-                accountEmail: new Text('work.rishabhsethia@gmail.com'),
+                decoration: BoxDecoration(
+                  color: Colors.orangeAccent,
+                ),
+                accountName: new Text("Rishabh Sethia", style: TextStyle(color: Colors.black,),),
+                accountEmail: new Text('work.rishabhsethia@gmail.com', style: TextStyle(color: Colors.black,),),
                 currentAccountPicture: new CircleAvatar(
-                    backgroundColor: Colors.tealAccent,
-                    child: new Text("R")
+                    backgroundColor: Colors.blueGrey,
+                    child: new Text("R", style: TextStyle(fontWeight: FontWeight.w300, fontSize: 30, color: Colors.white),)
                 ),
               ),
               new ListTile(
@@ -152,7 +165,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Text("ABC"),
+            HomePageTabs(0xffff5722),
             CalculatorButtons(),
             Text("ABC"),
             Text("ABC"),

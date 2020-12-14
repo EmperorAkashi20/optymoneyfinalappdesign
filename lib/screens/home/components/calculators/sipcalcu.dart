@@ -308,12 +308,11 @@ class _SipCalculatorFormState extends State<SipCalculatorForm> {
               height: getProportionateScreenHeight(50),
               width: double.infinity,
               child: Container(
-                decoration: ShapeDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  shape: Border.all(
-                    color: Colors.grey,
-                    width: 2.0,
-                  ),
+                  shape: BoxShape.rectangle,
+                  border: Border.all(width: 2.0, color: Colors.grey,),
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 ),
                 child: Align(
                   alignment: Alignment.centerLeft,
@@ -346,12 +345,11 @@ class _SipCalculatorFormState extends State<SipCalculatorForm> {
               height: getProportionateScreenHeight(50),
               width: double.infinity,
               child: Container(
-                decoration: ShapeDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  shape: Border.all(
-                    color: Colors.grey,
-                    width: 2.0,
-                  ),
+                  shape: BoxShape.rectangle,
+                  border: Border.all(width: 2.0, color: Colors.grey,),
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 ),
                 child: Align(
                   alignment: Alignment.centerLeft,
